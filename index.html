@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARVIA — Original Art & Handmade Works</title>
+<meta name="description" content="ARVIA is a curated marketplace for original paintings, photography, sculpture and handmade craft, sold directly by independent artists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="announce">Complimentary shipping on original works over $500 · <a href="#/shop">Shop the collection</a></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="icon-btn menu-btn" data-action="menu-open" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <a class="logo" href="#/">ARVIA</a>
+    <nav class="main-nav">
+      <a href="#/shop" data-nav="/shop">Shop</a>
+      <a href="#/categories" data-nav="/categories">Categories</a>
+      <a href="#/shop?sort=new" data-nav="/new">New Arrivals</a>
+      <a href="#/seller" data-nav="/seller">Sell on ARVIA</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" data-action="search-open" aria-label="Search">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+      </button>
+      <a class="icon-btn" href="#/wishlist" aria-label="Wishlist">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7-4.4-9.2-8.3C1.2 8.8 2.7 5.6 5.8 5.3c1.9-.2 3.7.9 4.5 2.3.8-1.4 2.6-2.5 4.5-2.3 3.1.3 4.6 3.5 3 6.4C19 15.6 12 20 12 20z"/></svg>
+        <span class="pill hide" id="wish-count">0</span>
+      </a>
+      <a class="icon-btn" href="#/cart" aria-label="Cart">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l-1.2 12H7.2L6 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="pill hide" id="cart-count">0</span>
+      </a>
+      <button class="icon-btn" data-action="account" aria-label="Account">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1.2-3.4 3.8-5 7-5s5.8 1.6 7 5"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="scrim" id="scrim" data-action="menu-close"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <span class="logo">ARVIA</span>
+    <button class="icon-btn" data-action="menu-close" aria-label="Close menu">✕</button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="#/">Home</a>
+    <a href="#/shop">Shop all</a>
+    <a href="#/categories">Categories</a>
+    <a href="#/shop?sort=new">New arrivals</a>
+    <a href="#/wishlist">Wishlist</a>
+    <a href="#/cart">Cart</a>
+    <a href="#/profile">Account</a>
+    <a href="#/seller">Seller studio</a>
+  </nav>
+  <a class="btn btn-primary drawer-cta" href="#/seller">Start selling</a>
+</aside>
+
+<!-- Search overlay -->
+<div class="search-ov" id="search-ov">
+  <div class="container search-ov-inner">
+    <div class="search-row">
+      <input id="global-search" type="search" placeholder="Search artworks, artists, categories…" autocomplete="off">
+      <button class="icon-btn" data-action="search-close" aria-label="Close search">✕</button>
+    </div>
+    <div class="search-hint">Try “oil painting”, “Mara”, “ceramics”</div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<!-- App content (router renders here) -->
+<main id="app"></main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo">ARVIA</div>
+      <p class="footer-tag">A curated marketplace for original art and handmade work, sold directly by independent artists.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <a href="#/shop">All works</a>
+      <a href="#/categories">Categories</a>
+      <a href="#/shop?sort=new">New arrivals</a>
+    </div>
+    <div>
+      <h4>Account</h4>
+      <a href="#/profile">Profile</a>
+      <a href="#/cart">Cart</a>
+      <a href="#/wishlist">Wishlist</a>
+    </div>
+    <div>
+      <h4>Artists</h4>
+      <a href="#/seller">Sell on ARVIA</a>
+      <a href="#/seller">Seller studio</a>
+      <a href="#/login">Sign in</a>
+    </div>
+  </div>
+  <div class="container footer-base">© 2025 ARVIA. All artwork © its respective artists.</div>
+</footer>
+
+<!-- Modal: hidden by default. Never gets an "open" class on page load. -->
+<div class="modal-backdrop" id="modal">
+  <div class="modal-card" id="modal-card"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
